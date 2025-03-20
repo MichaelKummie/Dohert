@@ -5,64 +5,69 @@ from selenium.webdriver.common.by import By
 
 driver = webdriver.Chrome()
 
-#visit the url
-driver.get("https://automationplayground.com/crm/login.html")
-time.sleep(5)
+#Define Variable
+pause = 5
+url = "https://automationplayground.com/crm/login.html"
+
+
+#visit url
+driver.get(url)
+time.sleep(pause)
 
 #Valid email address login
-driver.find_element(By.ID, "email-id").send_keys("michaelkumekor@gmail.com")
-time.sleep(5)
+Enter_email = driver.find_element(By.ID, "email-id")
+Enter_email.send_keys("michaelkumekor@gmail.com")
+time.sleep(pause)
 
 #enter password
 driver.find_element(By.ID, "password").send_keys("Kumekor1@")
-time.sleep(5)
+time.sleep(pause)
 
 #click on "remember me"
 driver.find_element(By.ID, "remember").send_keys()
-time.sleep(5)
+time.sleep(pause)
 
 #click on submit button
 driver.find_element(By.ID, "submit-id").click()
-time.sleep(5)
+time.sleep(pause)
 
 #click on "new customers"
-driver.find_element(By.ID, "new customer").click()
-time.sleep(5)
+driver.find_element(By.ID, "new-customer").click()
+time.sleep(pause)
 
 #input new customer email address
 driver.find_element(By.ID, "EmailAddress").send_keys("deborahdoherty@gmail.com")
-time.sleep(5)
+time.sleep(pause)
 
 #input first name of customer
-driver.find_element(By.ID, "Firstname").send_keys("deborah")
-time.sleep(5)
+driver.find_element(By.ID, "FirstName").send_keys("deborah")
+time.sleep(pause)
 
 #input last name of customer
-driver.find_element(By.ID, "Lastname").send_keys("doherty")
-time.sleep(5)
+driver.find_element(By.ID, "LastName").send_keys("doherty")
+time.sleep(pause)
 
 #input city
-driver.find_element(By.ID, "City").send_keys("Alimosho")
-time.sleep(5)
+driver.find_element(By.ID, "City").send_keys("Lagos")
+time.sleep(pause)
 
 #input state
-driver.find_element(By.ID, "State").send_keys("Lagos")
-time.sleep(5)
+driver.find_element(By.ID, "StateOrRegion").send_keys("Vermont")
+time.sleep(pause)
 
-#select gender type
-driver.find_element(By.XPATH,"//*[@id='loginform']div/div/div/div/form/div[6]/input[2]").click()
-time.sleep(5)
+#select gender
+driver.find_element(By.CSS_SELECTOR, "input[name='gender'][value='female']").click()
+time.sleep(pause)
 
-#check the "add to promotional list button
-driver.find_element(By.XPATH,"//*[@id='loginform']div/div/div/div/form/div[7]/input").click()
-time.sleep(5)
+#check the "add to promotional list button"
+driver.find_element(By.CSS_SELECTOR, "input[name='promos-name'][value='promos-yes']").click()
+time.sleep(pause)
 
 #click on submit
-driver.find_element(By.XPATH,"//*[@id='loginform']div/div/div/div/form/button").click()
-time.sleep(5)
+driver.find_element(By.XPATH, "//button[@type='submit' and text()='Submit']").click()
+time.sleep(pause)
 
-#click on sign
-driver.find_element(By.XPATH,"/html/body/nav/u1/1i/a").click()
-time.sleep(5)
+#click on sign out
+driver.find_element(By.CLASS_NAME, "nav-link").click()# Click 'Submit' button
+time.sleep(pause)
 
-time.sleep(5)
